@@ -40,7 +40,7 @@ class Review(models.Model):
     user = models.ForeignKey(User,verbose_name=_('user'),related_name='review_author',on_delete=models.SET_NULL,null=True,blank=True)
     product=models.ForeignKey(Product,verbose_name=_('product'),related_name='product_review',on_delete=models.CASCADE)
     review=models.TextField(_('review'),max_length=500)
-    rate=models.ImageField(_('rate'))
+    rate=models.IntegerField(_('rate'))
     create_date=models.DateTimeField(_('create_date'),default=timezone.now)
 
     def __str__(self):
